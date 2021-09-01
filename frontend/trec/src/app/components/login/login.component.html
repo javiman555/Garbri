@@ -1,0 +1,94 @@
+<section class="hero-wrap hero-wrap-2" style="background-image:url('assets/images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-end justify-content-center">
+			<div class="col-md-9 text-center mb-5">
+				<h1 class="mb-2 bread">¡Regístrate ya!</h1>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section ftco-wrap-about ftco-no-pb ftco-no-pt">
+	<div class="container">
+		<div class="col" style="background-image:url('assets/images/chef-4.jpg');">
+			<div class="row">
+				<div class="col-sm-4 p-4 p-md-4 d-flex align-items-center justify-content-md-end"style="background-color:#e52b34;">
+					<form action="/newuser" method="post" enctype="multipart/form-data" class="appointment-form">
+						<h3 class="mb-3">Regístrate</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #firstName type="text" class="form-control" name="firstName" placeholder="Nombre"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #surname type="text" class="form-control" name="surname" placeholder="Apellidos"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #name type="text" class="form-control" name="username" placeholder="Nombre de usuario"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #email type="email" class="form-control" name="email" placeholder="Correo electrónico"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #phoneNumber type="text" class="form-control" name="phoneNumber" placeholder="Teléfono"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #encodedPassword type="password" class="form-control" name="encodedPassword" placeholder="Contraseña"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="submit" value="Regístrate" class="btn btn-white py-3 px-4" (click)="saveUser($event, name.value, encodedPassword.value,phoneNumber.value,email.value,firstName.value,surname.value)">
+									<!-- <input type="hidden" name="_csrf" value="{{token}}"/> -->
+									<input type="hidden" name="roles" value="USER"/>
+								</div>
+						<!-- {{#registererror}}
+						<p style="color:white;">Credenciales inválidas. Elige otro nombre de usuario.</p>
+						{{/registererror}} -->
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-4 p-4 p-md-4 d-flex align-items-center justify-content-center">
+				</div>
+				<div class="col-sm-4 p-4 p-md-4 d-flex align-items-center justify-content-center"style="background-color:#e52b34;">
+					<form action="/login" method="post" class="appointment-form">
+						<h3 class="mb-3">Iniciar sesión</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #user type="text" class="form-control" name="username" placeholder="Nombre de usuario"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input #pass type="password" class="form-control" name="password" placeholder="Contraseña"/>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="submit" value="Iniciar sesión" class="btn btn-white py-3 px-4" (click)="logIn($event, user.value, pass.value)"/>
+								</div>			
+							<!-- <input type="hidden" name="_csrf" value="{{token}}"/> -->
+							</div>
+						</div>
+						<!-- {{#loginerror}}
+						<p style="color:white;">Credenciales inválidas. Introduce datos válidos.</p>
+						{{/loginerror}} -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
